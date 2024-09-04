@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: thisisapassword
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    command: ["redis-server", "--requirepass", "eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81"]
+    volumes: 
+      - redis:/data
+
+volumes:
+  mongodb_data:
+    driver: local
+  redis:
+    driver: local
