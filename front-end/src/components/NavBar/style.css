@@ -1,0 +1,44 @@
+// NavBar.styles.ts
+
+import { styled } from '@mui/material/styles';
+import { AppBar, Button } from '@mui/material';
+
+export const NavStyledComponent = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('sm')]: {
+    // Styles for larger screens
+    '.navLinks': {
+      display: 'flex',
+      justifyContent: 'space-around',
+    },
+    '.secondLine': {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  },
+  [theme.breakpoints.down('sm')]: {
+    // Styles for smaller screens
+    '.navLinks': {
+      display: 'none',
+    },
+    '.secondLine': {
+      display: 'none',
+    },
+    '.mobileMenu': {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+  },
+}));
+
+export const styles = {
+  root: {},
+  logo: {},
+  appBar: {},
+  navLinks: {},
+  navButton: {},
+  activeNavButton: {},
+  secondLine: {},
+  navButtonSecondLine: {},
+  mobileMenu: {}, // Add styles for mobile menu here
+};
